@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- <script type='text/javascript'
+        src='//recordingfilessuperintend.com/60/b3/e3/60b3e319167759c4f1c1e54d2251aa35.js'></script> -->
+    <meta http-equiv="refresh" content="50" />
+    <title>Mega Deportes TV - Star +</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://megadeportes.live/star-plus/horario.js?v2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="En Mega Deportes podras ver todos los partidos del fútbol argentino y sudamericano. Además, también podrás ver las ligas más importantes de Europa y eventos deportivos como NBA, NHL, MLB, UFC, etc." />
+    <link rel="icon" href="https://megatelevisionhd.com/img/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href="https://megadeportes.live/star-plus/assets/css/style.css?md6">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style type="text/css">
+        @media screen and (min-width:0px) and (max-width:767px) {
+            .iframe-container iframe {
+                height: 266px
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <body class="dark-mode container">
+        <div class="w3-main w3-content w3-padding" style="max-width:1300px;margin-top:90px">
+            <!-- App Header -->
+            <div class="appHeader bg-primary text-light">
+                <div class="pageTitle">
+                    <div class="left">
+                    </div>
+                    <a href="/"><img src="https://i.imgur.com/b80Mb7Z.png" alt="Mega Deportes TV"
+                            style="width:180px;height:30px;"></a>
+                </div>
+            </div>
+
+            <center>
+                <img src="/img/logo-starplus.png" alt="Star+" width="250" height="100">
+                <h2>Elige el evento:</h2>
+            </center>
+
+            <script>
+                function eventos() {
+                    var x = Math.random().toString(36).substring(7);
+
+                    $.ajax({
+                        url: "https://api.codetabs.com/v1/proxy?quest=https://librefutboltv.com/star-plus/eventos.json?" + x,
+                        type: "get",
+                        success: function (arr) {
+                            var content = '';
+                            for (var i = 0; i < arr.length; i++) {
+                                var obj = arr[i];
+                                url = obj['url'];
+                                if (url !== "#") {
+                                    let nurl = url.replace("/embed/eventos/?r=", "");
+                                    nurl = atob(nurl);
+                                    let wurl = nurl.replace("https://tcnt3.xyz/star_jwp.html?get=", "");
+                                    wurl = "//vercomofutbol.xyz/s/star_jwp.html?update&get=" + wurl;
+                                    let furl = btoa(wurl);
+                                    console.log(furl);
+                                    //console.log('Link está listo: ' + furl);
+                                    // Concatenamos link ya tratado
+                                    url = "/eventos.html?r=" + furl;
+                                } else {
+                                    //console.log('Link no está listo: ' + url);
+                                }
+                                status = obj['status'];
+                                if (status == "EN VIVO") {    
+                                 hora = '<button type="button" class="btn btn-danger me-1 mb-1">EN VIVO</button>';
+                                 
+                                } else if (status == "FINALIZADO") {
+                                    hora = '<button type="button" class="btn btn-dark me-1 mb-1">FINALIZADO</button>';
+                                } else {
+                                    hora = '<button type="button" class="btn btn-dark me-1 mb-1">HOY | <span class="t">' + status + '</span> hs</button>';
+                                }
+                                //console.log(status);
+                                content += '<div class="col-md-3 col-lg-4 mycard"><div class="no-section no-mt-2"><a href="' + url + '"><div class="card"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" class="card-img-top" alt="image" /><div class="card-body">' + hora + '<h3>' + obj['title'] + '</h3><h5 class="card-subtitle">' + obj['league'] + '</h5></div></div></a></div></div>';
+                            }
+                            $("#eventos").html(content);
+                            guardaHorario();
+                            dT();
+                        }
+                    })
+                }
+
+                eventos();
+
+                window.setInterval(function () {
+                    eventos();
+                }, 60000);
+            </script>
+            <div class="row" id="eventos"></div>
+        </div>
+
+        <div class="sharethis-inline-share-buttons"></div>
+        <script type="text/javascript"
+            src="https://platform-api.sharethis.com/js/sharethis.js#property=616bdca004c9870012778d81&product=sticky-share-buttons"
+            async="async"></script>
+        <center>
+            <center>
+                <h5> Mega Deportes 2023 &copy; Todos los derechos reservados.</h5>
+                <a href="/dmca.html" rel="nofollow"> DMCA
+                    <script id="_wauc0x">var _wau = _wau || []; _wau.push(["small", "55fki220bj", "c0x"]);</script>
+                    <script async src="//waust.at/s.js"></script>
+                </a>
+            </center>
+            <footer class="pt-4 my-md-5 pt-md-5 border-top">
+                <div class="row">
+                    <div class="col-6 col-md">
+                        <h5>Social</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="https://t.me/+8Qb2bd7rr6plZWRh">Telegram (Grupo)</a></li>
+                            <li><a class="text-muted" href="https://twitter.com/MegaDeportesTV2">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h5>Otras Páginas</h5>
+                        <ul class="list-unstyled text-small">
+                            <li><a class="text-muted" href="https://megatelevisionhd.com">Mega Television</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+</html>
