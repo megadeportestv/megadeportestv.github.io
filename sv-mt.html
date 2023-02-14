@@ -16,7 +16,7 @@ var getIMG = getParameterByName('img');
 var getKEY  = getParameterByName('key');
 var getKEY2  = getParameterByName('key2');
 if (getURL == "#") {alert('Vuelve a la pÃ¡gina anterior');}
-//if(window==window.top){window.location.replace("https://megatelevisionhd.com/");}
+if(window==window.top){window.location.replace("https://megatelevisionhd.com/");}
          function getSjson(name){
          	$.getJSON("/status.json?rd=" + randomValue, function(response) {
       sTLS(response[name]);
