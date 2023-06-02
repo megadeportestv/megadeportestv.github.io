@@ -97,7 +97,7 @@ function horaHuso(huso, formato) {
             var b = new Date(mi_array[i]);
 
             b.setMinutes(b.getMinutes() - (120 - huso));
-            //<!-- Cambiar sÃ¨Â´Â¸lo aquÃ©â€œâ€  para horario de verano (120) e invierno (60)
+            //<!-- Cambiar sè´¸lo aqué“† para horario de verano (120) e invierno (60)
             if (formato == "AMPM") {
                 elements[i].innerHTML = formatoAMPM(b);
             } else {
