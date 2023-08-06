@@ -1,36 +1,63 @@
-<!DOCTYPE  html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="refresh" content="15" />
-	</head>
-<style>
-.h3 {
-    color: #FFFFFF;
-    text-align: center;
-    font-family: Avenir-Next-World-Demi,sans-serif;
-}
-.padre {
+<head>
+    <meta http-equiv="refresh" content="15" />
+    <style>
+        .h3 {
+            color: #FFFFFF;
+            text-align: center;
+            font-family: Avenir-Next-World-Demi, sans-serif;
+        }
 
-}
-.hijo {
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   width: 100%;
-   height: 30%;
-   margin: auto;
-}
-</style>
-	<body style="background-color: #000000;">
-<div class="padre">
-   <div class="hijo">
-<h3 class="h3">El evento estará disponible en breve.</h3>
-<h3 class="h3">Esta página se actualizará automáticamente.</h3>
-</div>
-</div>
+        .padre {
+        }
 
+        .hijo {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 30%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body style="background-color: #000000;">
+    <div class="padre">
+        <div class="hijo">
+            <h3 class="h3">El evento comenzará en:</h3>
+            <div id="countdown" class="h3"></div>
+        </div>
+    </div>
 
-	</body>
+    <script>
+        // Función para calcular el tiempo restante y mostrarlo en el cronómetro
+        function showCountdown() {
+            var eventDate = new Date("2023-08-06T22:30:00"); // Establece la fecha y hora del evento en formato ISO (YYYY-MM-DDTHH:mm:ss)
+            var now = new Date();
+            var timeLeft = eventDate - now;
+
+            if (timeLeft <= 0) {
+                document.getElementById('countdown').textContent = "El evento ha comenzado";
+            } else {
+                var hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Asegurarse de que siempre se muestren 2 dígitos para horas, minutos y segundos
+                hours = String(hours).padStart(2, '0');
+                minutes = String(minutes).padStart(2, '0');
+                seconds = String(seconds).padStart(2, '0');
+
+                document.getElementById('countdown').textContent = hours + ":" + minutes + ":" + seconds;
+            }
+        }
+
+        // Mostrar el cronómetro de cuenta regresiva cuando la página carga
+        showCountdown();
+        setInterval(showCountdown, 1000);
+    </script>
+</body>
 </html>
