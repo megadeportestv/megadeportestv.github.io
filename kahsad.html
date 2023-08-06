@@ -30,9 +30,8 @@ if (this.readyState == 4 && this.status == 200) {
 	var jsonResponse = JSON.parse(ghttp.responseText);
 		var m3u8 = jsonResponse['hls'];
 		playerInstance.setup({
-		    title: "Mega Deportes TV",
+		    title: "Reproductor | Mega Deportes TV",
 		    description: "megadeportes.xyz",
-			//image: "https://i.imgur.com/TAlQKQz.png",
 			file: m3u8,
 			type: "hls",
 			withCredentials: true,
