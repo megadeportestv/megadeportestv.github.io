@@ -35,7 +35,7 @@
     <script>
         // Función para calcular el tiempo restante y mostrarlo en el cronómetro
         function showCountdown() {
-            var eventDate = new Date("2023-08-06T22:30:00"); // Establece la fecha y hora del evento en formato ISO (YYYY-MM-DDTHH:mm:ss)
+            var eventDate = new Date("2023-08-15T19:30:00"); // Establece la fecha y hora del evento en formato ISO (YYYY-MM-DDTHH:mm:ss)
             var now = new Date();
             var timeLeft = eventDate - now;
 
@@ -43,7 +43,7 @@
                 document.getElementById('countdown').textContent = "El evento ha comenzado";
                 // Redireccionar al usuario a una URL específica una vez que el tiempo haya finalizado
                 setTimeout(function() {
-                    //window.location.href = "/kahsad2.html?img=aHR0cHM6Ly9pLmliYi5jby9TN2Z0NXZTL2RhbG1pYS5qcGc=";
+                    window.location.href = "/22888528";
                 }, 5000); // Cambiar 5000 a la cantidad de milisegundos que deseas esperar antes de la redirección (en este caso, 0 segundos)
             } else {
                 var hours = Math.floor(timeLeft / (1000 * 60 * 60));
