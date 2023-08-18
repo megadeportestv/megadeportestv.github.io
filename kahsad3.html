@@ -32,17 +32,16 @@ var getID = getParameterByName('id');
 <body>
 <div id="player"></div>
 <script>
-var playerInstance= jwplayer("player");
+var playerInstance=jwplayer("player");
 var ghttp = new XMLHttpRequest();
 ghttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
 	var jsonResponse = JSON.parse(ghttp.responseText);
-		var m3u8 = jsonResponse['hls'];
 		playerInstance.setup({
 		    title: "Reproductor | Mega Deportes TV",
 		     description: "megadeportes.xyz",
 			image: atob(getIMG),
-			file: m3u8,
+			file: jsonResponse['hls'],
 			type: "hls",
 			withCredentials: true,
 			width: "100%",
@@ -53,7 +52,8 @@ if (this.readyState == 4 && this.status == 200) {
 		});
 	}
 }
-ghttp.open("GET", "https://tcnt.golf/json/"+getID+".json?", true);
+ghttp.open("GET", "https://tcnt.golf/json/"+getID+".json?" + Math.random().toString(36).substring(7), true);
+ghttp.send();
 ghttp.send();
 </script>
 </body>
