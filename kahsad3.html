@@ -23,8 +23,7 @@ function getParameterByName(name) {
 	results = regex.exec(location.search);
 	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-var getIMG = getParameterByName('img');
-if (getURL == "#") {alert('Vuelve a la página anterior');}
+var getID = getParameterByName('id');
 </script>	
 <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
 <script>
@@ -54,7 +53,7 @@ if (this.readyState == 4 && this.status == 200) {
 		});
 	}
 }
-ghttp.open("GET", "https://tcnt.golf/universo.json?", true);
+ghttp.open("GET", "https://tcnt.golf/json/"+getID+".json?", true);
 ghttp.send();
 </script>
 </body>
