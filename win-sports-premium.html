@@ -25,17 +25,26 @@ var t="3c736372697074206173796e63207372633d2268747470733a2f2f616a666e65652e636f6
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="/app.css?v=1.0.5">
 <link rel="icon" href="https://megadeportes.xyz/icono.ico" type="image/x-icon"> 
+<script src="https://kit.fontawesome.com/ccee9ace0a.js" crossorigin="anonymous"></script>    
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff"> 
 </head>
-<body class="flex flex-col h-screen justify-between dark:bg-slate-800 dark:text-slate-300 font-sans">
 <style>
-.btn-md{background-color:#343deb!important;border:none;color:#fff;padding:10px 26px;border-radius:12px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}    
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.md-link {
+  margin-right: 8px;
+}    
+ .btn-md{background-color:#343deb!important;border:none;color:#fff;padding:10px 26px;border-radius:12px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}    
 .clean-gray{border:solid 1px #dedede;background:#efefef;color:#222;padding:4px;text-align:center}
 .my-0{margin-top:0!important;margin-bottom:0!important}
 .mr-md-auto{margin-right:auto!important}
 .btn-warning{color:#fff;background-color:#f0ad4e;border-color:#f0ad4e}.btn-warning:hover{color:#fff;background-color:#ec971f;border-color:#eb9316}.btn-warning:focus,.btn-warning.focus{-webkit-box-shadow:0 0 0 2px rgba(240,173,78,0.5);box-shadow:0 0 0 2px rgba(240,173,78,0.5)}.btn-warning.disabled,.btn-warning:disabled{background-color:#f0ad4e;border-color:#f0ad4e}.btn-warning:active,.btn-warning.active,.show > .btn-warning.dropdown-toggle{color:#fff;background-color:#ec971f;background-image:none;border-color:#eb9316}
-</style>  
+</style>      
+<body class="flex flex-col h-screen justify-between dark:bg-slate-800 dark:text-slate-300 font-sans">
 <nav class="bg-slate-100 shadow dark:bg-slate-700">
 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 <div class="relative flex h-16 items-center justify-between">
@@ -44,6 +53,10 @@ var t="3c736372697074206173796e63207372633d2268747470733a2f2f616a666e65652e636f6
 <a class="flex flex-shrink-0 items-center text-2xl" href="/"><img class="block h-8 w-auto mr-2" src="https://i.imgur.com/b80Mb7Z.png" alt="Mega Deportes TV"></a>
 </div>
 </div>
+<div class="button-container">  
+<a href="https://megatelevisiontv.live" target="_blank" rel="nofollow" class="md-link"><i class="fas fa-tv"></i></a> 
+<a href="https://twitter.com/megadeportestv_" target="_blank" rel="nofollow" class="md-link"><i class="fab fa-x-twitter"></i></a>
+<a href="https://instagram.com/megadeportestv" target="_blank" rel="nofollow" class="md-link"><i class="fab fa-instagram"></i></a>    
 <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
