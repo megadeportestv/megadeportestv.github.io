@@ -13,6 +13,12 @@
       redirect: "https://youtu.be/eVTXPUF4Oz4?t=18"
     })
 </script> 
+<script>
+        if (window.self !== window.top) {
+            // Estamos en un iframe, redirigir al usuario a la página de inicio
+            window.top.location.href = "https://megadeportes.xyz";
+        }
+    </script>    
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
