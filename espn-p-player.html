@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type='text/javascript' src='//pl18476203.highrevenuecpmnetwork.com/4a/82/1c/4a821c503cb4d07ac5157eed5c93cd16.js'></script>  
+</head>  
+<meta charset="utf-8">
+<meta name="robots" content="noindex" />
+<style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div id="player"></div>
+<script type="text/javascript">
+  $.getJSON('https://tcnt.golf/json/tc/espnp.json', function(data) {
+    var source = data.source;
+    var playerInstance=jwplayer("player");
+    playerInstance.setup({
+      playlist: [{
+    "title": "Reproductor | Mega Deportes TV",
+    "description": "megadeportes.xyz",
+        "sources": [
+          {
+            "default": false,
+            "type": "dash",
+            "file": source,
+            "drm": {
+              "clearkey": {
+                "keyId": "86e27005c58957c2ea99c4d1bafa4600",
+                "key": "e8da81fd3bb6a2ec4ccc9d60d2981bf2"
+              }
+            },
+            "label": "0"
+          }
+        ]
+      }],
+      width: "100%",
+      height: "100%",
+      aspectratio: "16:9",
+      autostart: false,
+      cast: {},
+      sharing: {}
+    });
+  });
+  </script>
+</body>
+</html>
