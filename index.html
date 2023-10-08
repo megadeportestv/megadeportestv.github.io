@@ -1,244 +1,529 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>  
-<script type='text/javascript'>
-    document.oncontextmenu = function(){return false}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
-  <script>
-    // default options
-    ConsoleBan.init()
-    // custom options
-    ConsoleBan.init({
-      redirect: '/'
-    })
-  </script>     
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mega Deportes TV - Fútbol en VIVO Gratis HD</title>
-<meta name="description" content="En Mega Deportes podrás ver todos los partidos del fútbol argentino y sudamericano. Además, tambiénn podrás ver las ligas más importantes de Europa y eventos deportivos como NBA, NFL, MLB, UFC, etc.">
-<meta name="robots" content="index,follow">
-<link rel="stylesheet" href="//megadeportes.xyz/app.css?v=1.0.5">
-<link rel="stylesheet" href="//megadeportes.xyz/agenda.css?v=1.0.0">
-<link rel="icon" href="https://megadeportes.xyz/icono.ico" type="image/x-icon">
-<script src="https://kit.fontawesome.com/ccee9ace0a.js" crossorigin="anonymous"></script>   
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="https://megadeportes.xyz/icono.ico">
-<meta name="theme-color" content="#ffffff"> 
-</head>
-<style>
-.button-container {
-  display: flex;
-  align-items: center;
-}
+<head>
+    <meta charset="utf-8">
+    <title>Mega Deportes TV - Fútbol en VIVO Gratis HD</title>
 
-.md-link {
-  margin-right: 8px;
- 
-</style>
-<body class="flex flex-col h-screen justify-between dark:bg-slate-800 dark:text-slate-300 font-sans">
-<nav class="bg-slate-100 shadow dark:bg-slate-700">
-<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-<div class="relative flex h-16 items-center justify-between">
-<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-<div class="flex flex-shrink-0 items-center">
-<a class="flex flex-shrink-0 items-center text-lg" href="/"><img class="block h-8 w-auto mr-2" src="https://megadeportes.xyz/icono.ico" alt="Mega Deportes TV">Mega Deportes TV</a>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Silicon - Multipurpose Technology Bootstrap Template">
+<meta name="description" content="En Mega Deportes podrás ver todos los partidos del fútbol argentino y sudamericano. Además, tambiénn podrás ver las ligas más importantes de Europa y eventos deportivos como NBA, NFL, MLB, UFC, etc.">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icono.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icono.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="icono.ico">
+    <link rel="shortcut icon" href="https://megadeportes.xyz/icono.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="/boxicons.min.css" />
+    <link rel="stylesheet" media="screen" href="/swiper-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="/theme.css">
+
+    <!-- Events Styles -->
+    <link rel="stylesheet" media="screen" href="/events.css">
+
+    <!-- Page loading styles -->
+    <style>
+        .page-loading {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: all .4s .2s ease-in-out;
+            transition: all .4s .2s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 9999;
+        }
+
+        .dark-mode .page-loading {
+            background-color: #0b0f19;
+        }
+
+        .page-loading.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .page-loading-inner {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out;
+            opacity: 0;
+        }
+
+        .page-loading.active>.page-loading-inner {
+            opacity: 1;
+        }
+
+        .page-loading-inner>span {
+            display: block;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #9397ad;
+        }
+
+        .dark-mode .page-loading-inner>span {
+            color: #fff;
+            opacity: .6;
+        }
+
+        .page-spinner {
+            display: inline-block;
+            width: 2.75rem;
+            height: 2.75rem;
+            margin-bottom: .75rem;
+            vertical-align: text-bottom;
+            border: .15em solid #b4b7c9;
+            border-right-color: transparent;
+            border-radius: 50%;
+            -webkit-animation: spinner .75s linear infinite;
+            animation: spinner .75s linear infinite;
+        }
+
+        .dark-mode .page-spinner {
+            border-color: rgba(255, 255, 255, .4);
+            border-right-color: transparent;
+        }
+
+        @-webkit-keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        .iframe-container iframe{height:500px}}
+    </style>
+
+    <!-- Theme mode -->
+    <script>
+        let mode = window.localStorage.getItem('mode'),
+            root = document.getElementsByTagName('html')[0];
+        if (mode !== null && mode === 'dark') {
+            root.classList.add('dark-mode');
+        } else {
+            root.classList.remove('dark-mode');
+        }
+    </script>
+
+    <!-- Page loading scripts -->
+    <script>
+        (function () {
+            window.onload = function () {
+                const preloader = document.querySelector('.page-loading');
+                preloader.classList.remove('active');
+                setTimeout(function () {
+                    preloader.remove();
+                }, 1000);
+            };
+        })();
+    </script>
+</head>
+
+
+<!-- Body -->
+
+<body>
+
+
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+        <!-- Navbar -->
+        <header class="header navbar navbar-expand-lg bg-light navbar-sticky">
+            <div class="container px-3">
+                 <a href="/" class="navbar-brand pe-3">
+                    <img src="https://megadeportes.xyz/icono.ico" width="40" alt="iRaffle TV">
+                    Mega Deportes TV
+                </a>
+                <div id="navbarNav" class="offcanvas offcanvas-end">
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="https://megatelevisiontv.live"
+                                class="nav-link" target="_blank">Mega Televisión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://twitter.com/megadeportestv_"
+                                class="nav-link" target="_blank">X</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.instagram.com/megadeportestv/"
+                                class="nav-link" target="_blank">Instagram</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://discord.gg/GjSSp26T9"
+                                class="nav-link" target="_blank">Discord</a>
+                            </li>
+                            
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+                    <input type="checkbox" class="form-check-input" id="theme-mode">
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode"><i
+                            class="bx bx-sun fs-5 lh-1 me-1"></i></label>
+                    <label class="form-check-label d-none d-sm-block" for="theme-mode"><i
+                            class="bx bx-moon fs-5 lh-1 me-1"></i></label>
+                </div>
+                <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </header><section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+<div class="iframe-container">
+<iframe allowfullscreen="true" scrolling="auto" src="https://megadeportes.xyz/agenda3.html" frameborder="0" width="100%" height="700"></iframe>
 </div>
-</div>
-<div class="button-container">
-<a href="https://megatelevisiontv.live" target="_blank" rel="nofollow" class="md-link"><i class="fas fa-tv"></i></a>     
-<a href="https://twitter.com/megadeportestv_" target="_blank" rel="nofollow" class="md-link"><i class="fab fa-x-twitter"></i></a>
-<a href="https://instagram.com/megadeportestv" target="_blank" rel="nofollow" class="md-link"><i class="fab fa-instagram"></i></a>
-<button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-</svg>
-<svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-</svg>
-</button>
-</div>
-</div>
-</nav>
-<main class="container mx-auto px-4  max-w-7xl mb-auto">
-<div>
-<div class="md:col-span-2" bis_skin_checked="1">
-<iframe src="https://megadeportes.xyz/agenda3.html" class="w-full h-[21rem]" frameborder="0" bis_size="{&quot;x&quot;:16,&quot;y&quot;:64,&quot;w&quot;:534,&quot;h&quot;:336,&quot;abs_x&quot;:16,&quot;abs_y&quot;:64}"></iframe>
-</div>
-<h1 class="text-3xl my-3 text-center">Canales deportivos</h1>
-<div class="channels grid grid-cols-2 md:grid-cols-5 gap-6 my-5">
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/star-plus.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megadeportes.xyz/logo-starplus.png" alt="Star+">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>   
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/espn.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/ESPN.webp" alt="ESPN">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/espn-2">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/ESPN_2.webp" alt="ESPN 2">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/espn-3.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/ESPN_3.webp" alt="ESPN 3">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/espn-extra.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/ESPN_Extra_new.png" alt="ESPN Extra">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/dsports.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/DSports.png?dd" alt="DSports">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/dsports-2.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/DSports_2.png?d2d" alt="DSports 2">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/dsports-plus.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/DSports_Plus.png?d3d" alt="DSports+">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/dsports-fight.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/Directv_Fight.png" alt="DSports Fight">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/dsports-motor.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://i.imgur.com/nKeBIvz.png" alt="DSports Motor">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/fox-sports.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/Fox_Sports.png" alt="FOX Sports">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/fox-sports-2.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/Fox_Sports_2.png" alt="FOX Sports 2">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/fox-sports-3.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/Fox_Sports_3.png" alt="FOX Sports 3">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/tyc-sports.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/TYC_Sports.webp" alt="TyC Sports">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/tv-publica.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/TV_Publica.webp" alt="TV P¨²blica">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/fox-sports-premium-mx.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/fspmx.png?updateg" alt="FOX Sports Premium MX">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/tudn.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/TUDN.webp" alt="TUDN">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/afizzionados.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/afizzionados_up.png" alt="Afizzionados">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/claro-sports.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/claro_sports.png" alt="Claro Sports">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/gol-tv.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/GolTV.webp" alt="GolTV">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/tnt-sports.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/TNT_Sports.webp" alt="TNT Sports">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/espn-premium.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/espn_premium.png" alt="ESPN Premium">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>     
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/win-sports-premium.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/Win_Sports_Premium.webp" alt="Win Sports+">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/vtv-plus.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/VTV_Plus_up.png" alt="VTV+">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/vtv.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://megatelevisiontv.live/img/VTV.webp" alt="VTV">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/tnt-sports-chile.html">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://i.imgur.com/5hWCnLk.png" alt="TNT Sports Chile">
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<footer class="mt-4 bg-slate-200 text-zinc-600 py-4 dark:bg-slate-700">
-<div class="container mx-auto px-4 text-center">
-<p class="text-gray-800 dark:text-slate-300">Mega Deportes 2023 &copy; Todos los derechos reservados.</p>
-<a href="/dmca.html" rel="nofollow"> DMCA </a> <script id="_wau6if">var _wau = _wau || []; _wau.push(["small", "yox6vb7pxk", "6if"]);</script><script async src="//waust.at/s.js"></script> </a></center>
-</div>
+
+
+<section class="container text-center pt-5 mt-2 mt-md-4 mt-lg-5">
+    <!-- Tarjetas de canales -->
+    <h2 class="h1 d-md-inline-block position-relative mb-md-5 mb-sm-4 text-sm-start text-center">
+        Canales deportivos
+        <!-- Arrow shape -->
+       
+            <path
+                d="M53.9527 51.0012c8.396-10.5668 2.0302-26.0134-11.7481-26.7511-.6899-.0646-1.4612.0015-2.1258.0431.1243 9.0462-4.1714 18.8896-11.5618 21.3814-6.6695 2.2133-10.3337-4.2224-7.5813-9.676 3.2966-6.4755 9.103-11.8504 16.1678-13.8189-.5654-5.6953-3.3436-10.7672-9.485-12.48517C17.2678 6.8204 6.49364 16.3681 4.98841 26.127c-.09276 1.0297-1.68569.9497-1.59293-.0801C3.98732 12.9139 19.7395 2.55212 31.9628 8.5787c4.7253 2.3813 7.2649 7.3963 7.9368 13.067 7.4237-.9311 14.5154 3.3683 18.3422 9.5422 4.3988 7.1623 2.3584 15.1401-2.6322 21.1108-.7826.9653-2.3331-.3572-1.6569-1.2975zM26.7754 32.1845c-1.9411 2.2411-4.076 5.0872-4.3542 8.1764-.3036 2.9829 3.7601 3.0525 5.4905 2.7645 2.1568-.3863 3.7221-2.3164 4.8863-4.0419 2.6228-3.6308 4.3657-9.0752 4.4844-14.2563-4.0808 1.279-7.6514 4.2327-10.507 7.3573zm24.6311 25.592c-.7061-2.9738-1.2243-6.1031-1.1591-9.143.0423-1.242 1.767-1.0805 1.8313.1372.1284 2.435.815 4.8532 1.4764 7.1651l4.1619-1.4098c1.0153-.4586 2.4373-1.5714 3.6544-1.1804.6087.1954.7347.7264.6475 1.3068-.2302 1.3976-2.4683 1.9147-3.5901 2.398-1.8429.7619-3.6293 1.2865-5.5477 1.7298-.6391.1476-1.3233-.3665-1.4746-1.0037z">
+            </path>
+        </svg>
+    </h2>
+    <div class="row">
+                <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/star-plus.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megadeportes.xyz/logo-starplus.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                             Star +                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/espn.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/ESPN.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            ESPN                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/espn-2.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/ESPN_2.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            ESPN 2                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/espn-3.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/ESPN_3.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            ESPN 3                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/espn-extra.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/ESPN_Extra_new.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                             ESPN Extra                      </h5>
+                        <div class="card-footer fs-sm text-muted">      
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/espn-extra.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/espn_premium.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            ESPN Premium                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/tnt-sports.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/TNT_Sports.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                           TNT Sports                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                                                  </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/tyc-sports.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/TYC_Sports.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            TyC Sports                     </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/fox-sports.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/Fox_Sports.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            FOX Sports                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/fox-sports-2.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/Fox_Sports_2.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                             FOX Sports 2                      </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/fox-sports-3.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/Fox_Sports_3.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            FOX Sports 3                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                      </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/tv-publica.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/TV_Publica.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            TV Pública                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/dsports.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/DSports.png?dd" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                           DSports                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                      </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/dsports-2.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/DSports_2.png?d2d" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            DSports 2                        </h5>
+                        <div class="card-footer fs-sm text-muted">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/dsports-plus.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/DSports_Plus.png?d3d" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            DSports+                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/fox-sports-premium-mx.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/fspmx.png?updateg" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                             FOX Sports Premium MX                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                          </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/win-sports-premium-mx.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://megatelevisiontv.live/img/Win_Sports_Premium.webp" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Win Sports+                      </h5>
+                        <div class="card-footer fs-sm text-muted">
+                      </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+            <div class="canal col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <a href="/tnt-sports-chile.html">
+                <div class="card border-0 shadow-sm card-hover card-hover-primary">
+                    <div class="card-header">
+                        <img class="card-img-canal" src="https://i.imgur.com/5hWCnLk.png" alt="Card image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            TNT Sports Chile                       </h5>
+                        <div class="card-footer fs-sm text-muted">
+                       </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        </div>
+</section><!-- Footer -->
+<footer class="footer dark-mode bg-dark pt-5 pb-4 pb-lg-5">
+    <div class="container pt-lg-4">
+        <p class="nav d-block fs-xs text-center text-md-start pb-2 pb-lg-0 mb-0">
+            <span class="text-light opacity-50">&copy; 2023. Todos los Derechos Reservados. Creado por </span>
+            <a class="nav-link d-inline-block p-0" href="/" target="_blank" rel="noopener">Mega Deportes TV</a>
+        </p>
+    </div>
 </footer>
-<script src="//megadeportes.xyz/app.js?v2"></script>
-<script src="//megadeportes.xyz/agenda.js"></script>
-<script type='text/javascript'>
-var t="3c73637269707420646174612d63666173796e633d2266616c73652220747970653d22746578742f6a6176617363726970742220646174612d6164656c3d226174616722207372633d222f2f61736163646e2e636f6d2f7363726970742f6174672e6a732220637a69643d2261716535777372696161223e3c2f7363726970743e";for(i=0;i<t.length;i+=2){document.write(String.fromCharCode(parseInt(t.substr(i,2),16)));}
-</script>   
+
+
+<!-- Back to top button -->
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+
+<!-- Vendor Scripts -->
+<script src="/bootstrap.bundle.min.js"></script>
+<script src="/smooth-scroll.polyfills.min.js"></script>
+<script src="/lottie-player.js"></script>
+<script src="/swiper-bundle.min.js"></script>
+
+<!-- Main Theme Script -->
+<script src="/theme.min.js"></script>
+<script src="/jquery.min.js"></script>
+
 </body>
+
 </html>
