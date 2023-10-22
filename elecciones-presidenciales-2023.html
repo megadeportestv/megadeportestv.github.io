@@ -5,14 +5,19 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const verResultadosButton = document.getElementById("ver-resultados");
+  const resultadoFrame = document.getElementById("resultado-frame");
+
   verResultadosButton.addEventListener("click", function () {
     // URL de la página oficial de resultados (ajusta la URL según tus necesidades)
     const url = "https://resultados.gob.ar";
 
-    // Abre la URL en una nueva ventana
-    window.open(url, "_blank");
+    // Cargar la página dentro del iframe
+    resultadoFrame.src = url;
+
+    // Mostrar el iframe
+    resultadoFrame.style.display = "block";
   });
-});	  
+});  
 </script>  
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="md:col-span-2 flex flex-col items-end">
   <div style="display: flex; flex-direction: column-reverse; align-items: flex-end;">
     <button id="ver-resultados" class="btn-md btn-warning">Ver Resultados (Página Oficial)</button>
+    <iframe id="resultado-frame" style="width: 100%; height: 600px; display: none;"></iframe>
     <iframe src="https://www.twitch.tv/embed/megadeportestv212/chat?parent=megadeportes.xyz&darkpopout&no-mobile-redirect=true" style="width: 100%; height: 420px;" frameborder="0"></iframe>
   </div>
 </div>
