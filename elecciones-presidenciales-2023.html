@@ -9,23 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   verResultadosButton.addEventListener("click", function () {
     if (resultadoFrame.style.display === "none" || resultadoFrame.style.display === "") {
-      // URL de la página oficial de resultados (ajusta la URL según tus necesidades)
       const url = "https://resultados.gob.ar";
 
-      // Cargar la página dentro del iframe
       resultadoFrame.src = url;
 
-      // Mostrar el iframe
       resultadoFrame.style.display = "block";
 
-      // Cambiar el texto del botón a "Cerrar página"
       verResultadosButton.textContent = "Cerrar página";
     } else {
-      // Ocultar el iframe al hacer clic nuevamente en el botón
       resultadoFrame.style.display = "none";
-      resultadoFrame.src = "about:blank"; // Limpia la página cargada en el iframe
+      resultadoFrame.src = "about:blank";
 
-      // Cambiar el texto del botón a "Ver Resultados (Página Oficial)"
       verResultadosButton.textContent = "Ver Resultados (Página Oficial)";
     }
   });
