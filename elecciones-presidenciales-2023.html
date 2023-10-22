@@ -8,16 +8,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const resultadoFrame = document.getElementById("resultado-frame");
 
   verResultadosButton.addEventListener("click", function () {
-    // URL de la página oficial de resultados (ajusta la URL según tus necesidades)
-    const url = "https://resultados.gob.ar";
+    if (resultadoFrame.style.display === "none" || resultadoFrame.style.display === "") {
+      const url = "https://resultados.gob.ar";
 
-    // Cargar la página dentro del iframe
-    resultadoFrame.src = url;
+      resultadoFrame.src = url;
 
-    // Mostrar el iframe
-    resultadoFrame.style.display = "block";
+      resultadoFrame.style.display = "block";
+    } else {
+      resultadoFrame.style.display = "none";
+      resultadoFrame.src = "about:blank";
+    }
   });
-});  
+}); 
 </script>  
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
