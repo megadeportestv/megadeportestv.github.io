@@ -216,46 +216,63 @@
                     </li>
                   </ul>
                   <div class="sharethis-inline-share-buttons"></div>
-                  <script>
-                    function eventos() {
-                      var x = Math.random().toString(36).substring(7);
-                      $.ajax({
-                        url: "https://tcnt.golf/star.json?" + x,
-                        type: "get",
-                        success: function(arr) {
-                          var content = '';
-                          for (var i = 0; i < arr.length; i++) {
-                            if (i % 4 == 0) {
-                              if (i != 0) content += ' < /div>';
-                              content += ' < div class = "w3-row-padding w3-padding-16 w3-center"
-                              id = "copa" > ';
-                            }
-                            var obj = arr[i];
-                            if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO") status = obj['status'];
-                            else status = 'HOY |  < span class = "t" > ' + obj['
-                            status '] + ' < /span> hs';
-                            if (status == "EN VIVO") color = "danger";
-                            else color = "dark";
-                            content += ' < div class = "w3-quarter" > < a href = "' + obj['url'] + '" > < img src = "https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg"
-                            alt = "Star+"
-                            style = "width:100%"
-                            class = "img-eventos" > < /a> < a class = "badge rounded-pill bg-' + color + '"
-                            href = "' + obj['url'] + '" > ' + status + ' < /a> < div class = "w3-card-4" > < b > ' + obj['
-                            title '] + ' < /b> < /div>' + ' < div class = "font-eventos" > ' + obj['
-                            league '] + ' < /div> < /div>';
-                            if (i == arr.length - 1) content += ' < /div>';
-                          }
-                          $("#eventos").html(content);
-                          guardaHorario();
-                          dT();
-                        }
-                      })
+                 <script>
+    function eventos() {
+        var x = Math.random().toString(36).substring(7);
+
+        $.ajax({
+            url: "https://tcnt.golf/star.json?" + x,
+            type: "get",
+            success: function (arr) {
+                var content = '';
+
+                for (var i = 0; i < arr.length; i++) {
+                    var obj = arr[i];
+                    var status, color;
+                    
+                    // Transformación de la URL
+                    var url = obj['url'];
+                    if (url !== "#") {
+                        let nurl = url.replace("/embed/eventos/?r=", "");
+                        nurl = atob(nurl);
+                        let wurl = nurl.replace("https://futbolplaytvhd.com/star-plus/star.php?get=", "");
+                        wurl = "https://caperchi.click/star.html?get=" + wurl;
+                        let furl = btoa(wurl);
+                        console.log(furl);
+                        url = "https://megadeportes.xyz/eventos.html?r=" + furl;
+                    } else {
+                        // URL no necesita transformación
                     }
-                    eventos();
-                    window.setInterval(function() {
-                      eventos();
-                    }, 60000);
-                  </script>
+
+                   content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
+                  
+                    if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
+                        status = obj['status'];
+                    else
+                        status = 'HOY | <span class="t">' + obj['status'] + '</span> hs';
+
+                    if (status == "EN VIVO")
+                        color = "danger";
+                    else
+                        color = "dark";
+
+                    content += '<div class="w3-quarter"><a href="' + url + '"><img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/' + obj['img'] + '/scale?width=500&aspectRatio=1.78&format=jpeg" alt="Star+" style="width:100%" class="img-eventos"></a><a class="badge rounded-pill bg-' + color + '" href="' + url + '">' + status + '</a> <div class="w3-card-4"><b>' + obj['title'] + '</b></div>' + '<div class="font-eventos">' + obj['league'] + '</div></div>';
+                }
+
+                $("#eventos").html(content);
+
+                guardaHorario();
+                dT();
+            }
+        })
+    }
+
+    eventos();
+
+    window.setInterval(function () {
+        eventos();
+    }, 60000);
+</script>
                 </div>
               </div>
             </section>
