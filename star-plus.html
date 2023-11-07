@@ -232,6 +232,8 @@
                         // URL no necesita transformación
                     }
 
+                   content += '<div class="w3-row-padding w3-padding-16 w3-center" id="copa">';
+                  
                     if (obj['status'] == "FINALIZADO" || obj['status'] == "EN VIVO")
                         status = obj['status'];
                     else
@@ -259,11 +261,7 @@
         eventos();
     }, 60000);
 </script>
-</section>
-<body>
-    <div class="container">
-      <div id="eventos" class="card-container"></div>
-    </div>
+
                 
                   <div style="width:100%;margin-bottom:-40px">
                     <br />
