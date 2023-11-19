@@ -11,6 +11,29 @@
         redirect: "https://youtu.be/eVTXPUF4Oz4?t=18"
       })
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const verResultadosButton = document.getElementById("ver-resultados");
+  const resultadoFrame = document.getElementById("resultado-frame");
+
+  verResultadosButton.addEventListener("click", function () {
+    if (resultadoFrame.style.display === "none" || resultadoFrame.style.display === "") {
+      const url = "https://resultados.gob.ar";
+
+      resultadoFrame.src = url;
+
+      resultadoFrame.style.display = "block";
+
+      verResultadosButton.textContent = "Cerrar página";
+    } else {
+      resultadoFrame.style.display = "none";
+      resultadoFrame.src = "about:blank";
+
+      verResultadosButton.textContent = "Ver Resultados (Página Oficial)";
+    }
+  });
+}); 
+</script>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Mega Deportes TV - Elecciones Presidenciales 2023 | Balotaje en VIVO</title>
@@ -81,9 +104,7 @@
                        </div>
                      </div>
                      <div>
-<a href="https://resultados.gob.ar" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-    Ver Resultados (página oficial)
-</a>
+<button id="ver-resultados" class="btn btn-primary">Ver Resultados (Página Oficial)</button>
                        
    <a id="opcion1" href="/fl.html?get=LmN2YXR0di5jb20uYXIvbGl2ZS9jN2Vkcy9DNU4vU0FfTGl2ZV9kYXNoX2VuYy9DNU4ubXBk&key=MDUwZGY1YzZlNzhjNzc0ZTc4YzNlOTllZWY4YTFiMjk=&key2=MGU0MTQxZDZhYjIxYTM2Y2JjNGRhNzc3YWIzMDk2ZDQ=">
    <button class="btn btn-white btn-repro">Opción 1 (C5N)</button>
