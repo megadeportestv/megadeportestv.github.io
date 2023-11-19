@@ -15,23 +15,17 @@
         document.addEventListener("DOMContentLoaded", function () {
             const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-            // Comprueba si la URL de la página es la deseada
-            if (window.location.href === "https://resultados.gob.ar/") {
-                // Muestra el botón
-                scrollToTopBtn.style.display = "block";
+            // Muestra el botón
+            scrollToTopBtn.style.display = "block";
 
-                // Agrega un listener al botón
-                scrollToTopBtn.addEventListener("click", function () {
-                    // Utiliza smooth scroll para animar el desplazamiento hacia arriba
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
+            // Agrega un listener al botón
+            scrollToTopBtn.addEventListener("click", function () {
+                // Utiliza smooth scroll para animar el desplazamiento hacia arriba
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
                 });
-            } else {
-                // Si no estás en la página específica, oculta el botón
-                scrollToTopBtn.style.display = "none";
-            }
+            });
         });
     </script>
 
