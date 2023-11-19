@@ -12,22 +12,22 @@
       })
   </script>
  <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-            // Muestra el botón
-            scrollToTopBtn.style.display = "block";
+        // Muestra el botón
+        scrollToTopBtn.style.display = "block";
 
-            // Agrega un listener al botón
-            scrollToTopBtn.addEventListener("click", function () {
-                // Utiliza smooth scroll para animar el desplazamiento hacia arriba
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
+        // Agrega un listener al botón
+        scrollToTopBtn.addEventListener("click", function () {
+            // URL de la página que quieres cargar
+            const pageURL = "https://resultados.gob.ar/";
+
+            // Cargar la página en el mismo sitio
+            window.location.href = pageURL;
         });
-    </script>
+    });
+</script>
 
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width" />
