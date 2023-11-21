@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='//pl18476203.highrevenuecpmnetwork.com/4a/82/1c/4a821c503cb4d07ac5157eed5c93cd16.js'></script>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #loading-message {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      display: none;
+      text-align: left;
+    }
+  </style>
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <script>
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div id="loading-message">Cargando... Por favor, espere.</div>
+  <div id="player"></div>
+  <script>
+    function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    $(document).ready(function () {
+      var defaultGetUrl = 'https://firmdefensivekeyboardmacro--ceratigod403.repl.co/get.json';
+      var customGetParam = getParameterByName('get');
+      var getParamValue = customGetParam ? 'https://firmdefensivekeyboardmacro--ceratigod403.repl.co/' + customGetParam + '.json' : defaultGetUrl;
+
+      $.getJSON('https://corsproxy.io/?url=' + encodeURIComponent(getParamValue), function (data) {
+        var url = data.url;
+        var playerInstance = jwplayer("player");
+
+        $('#loading-message').show();
+
+        setTimeout(function () {
+          $('#loading-message').hide();
+
+          playerInstance.setup({
+            playlist: [{
+              title: "Mega Deportes TV",
+              description: "megadeportes.xyz",
+              file: url,
+              type: "dash",
+              width: "100%",
+              height: "100%",
+              aspectratio: "16:9",
+              autostart: true,
+              cast: {},
+              sharing: {}
+            }]
+          });
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+
+</html>
