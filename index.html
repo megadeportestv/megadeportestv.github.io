@@ -71,7 +71,14 @@
  <div class="tarjeta">
    <h2>La Renga | Desde el fin del mundo</h2>
     <p class="descripcion">Mirá en vivo el concierto desde Ushuaia, Tierra del Fuego, Argentina.</p>
-        <a href="#" class="ver-en-vivo-button">Disponible desde las 21 hs</a>
+        <a href="#" onclick="mostrarAviso()" class="ver-en-vivo-button">Disponible desde las 21 hs</a>
+     <script>
+  function mostrarAviso() {
+    window.alert("El enlace estará disponible minutos antes.");
+    // alert("¡El link no está listo!");
+    event.preventDefault(); // Evita que el enlace se abra
+  }
+</script>
     </div>
 </div>
 </center>     
